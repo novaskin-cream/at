@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html class="wide wow-animation desktop landscape rd-navbar-static-linked" lang="en">
+   <head>
+
+<script src="js/jquery.min.js"></script>
+
+    <script>
+    function set_validator_errors(){
+        orderValidator.errorTitle = 'Bitte korrigieren sie die folgenden Fehler'; 
+
+        orderValidator.errorNameField = 'Name'; 
+        orderValidator.errorNameMess = 'Gib deinen Namen ein'; 
+        
+        orderValidator.errorPhoneField = 'Telefonnummer'; 
+        orderValidator.errorPhoneMess = 'Geben Sie die richtige Telefonnummer ein'; 
+        
+        orderValidator.errorAddress = 'Geben Sie die richtige Adresse ein'; 
+        orderValidator.errorRequired = 'Pflichtfeld'; 
+        orderValidator.errorMaxLength = 'Gültiges maximales {1} Zeichen'; 
+        orderValidator.errorMinLength = 'gültiges Mindestzeichen {1}'; 
+        orderValidator.errorEmailField = 'E-Mail-Adresse';
+        orderValidator.errorEmail = 'Ungültige E-Mail angegeben';
+        }
+    </script>
+    
+<script>
+
+
+
+    
+    setOffer: function (offerId) {
+        if (offerId == this._setOfferId) {
+            return ;
+        }
+        this._setOfferId = offerId;
+        if (offerId) {
+            var offer = app.offers[offerId];
+            var previousOffer = app.currentOffer;
+            app.currentOffer = offer;
+            var event = this.jq.Event("offerchange");
+            event.previousOffer = previousOffer;
+            event.currentOffer = app.currentOffer;
+            this.jq(document).trigger(event);
+            this.updatePage(offer);
+        } else {
+            $('input[name=country]').val('');
+        }
+    },
+    
+    updatePage: function(offer) {
+        $('x-newprice').html(offer.price);
+        $('x-oldprice').html(offer.price2);
+        $('x-currency').html(offer.currency.name);
+        $('input[name=offer], select[name=offer]').val(offer.id);
+        $('input[name=country]').val(offer.country.code);
+    },
+
+    blockForm: function() {
+        // Блокируем кнопки при отправке формы
+        $('input[type=submit]', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        $('button', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        app.incompleteOrder.lock = true;
+        clearTimeout(app.incompleteOrder.timer);
+    },
+
+    unblockForm: function() {
+        $('input[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        $('button[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        app.incompleteOrder.lock = false;
+        clearTimeout(app.incompleteOrder.timer);
+    }
+
+};
+
+
+</script><script src="js/form.validate.js"></script>
+<script src="js/form.incomplete.js"></script>
+<script src="js/main2.js"></script>
+
+
+
+      <title>Novaskin Verjüngende Gesichtscreme | Offizielle Seite</title>
+      <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="stylesheet" type="text/css" href="css/css.css">
+
+      <link rel="stylesheet" href="css/bootstrap.css" media="all">
+      <link rel="stylesheet" href="css/fonts.css" media="all">
+      <link rel="stylesheet" href="css/style.css" media="all">
+      <script src="js/jquery.min_1.js"></script>
+
+      <script type="text/javascript">    
+         $(document).ready(function () {
+           $(".product-single").click(function () {
+                $('.product-single').removeClass('selectedBox');
+                $(this).addClass('selectedBox');
+               
+               
+         });
+             
+           
+             $(".toBoxes").click(function () {
+             $('html, body').animate({
+               scrollTop: $("#product").offset().top
+             }, 1900);
+              });
+         
+             $(".nav_home").click(function () {
+             $("html, body").animate({ 
+                 scrollTop: 0 
+             }, 1900);
+              });
+         
+              $(".nav_benefits").click(function () {
+             $('html, body').animate({
+               scrollTop: $("#benefits_section").offset().top - 30
+             }, 1900);
+              });
+         
+               $(".nav_ingredients").click(function () {
+             $('html, body').animate({
+               scrollTop: $("#ingredients_section").offset().top - 30
+             }, 1900);
+              });
+         
+                $(".nav_how_to_use").click(function () {
+             $('html, body').animate({
+               scrollTop: $("#how_to_use_section").offset().top - 30
+             }, 1900);
+              });
+         
+                 $(".nav_our_clients").click(function () {
+             $('html, body').animate({
+               scrollTop: $("#testimonials_section").offset().top - 30
+             }, 1900);
+              });
+         
+             $(".nav_our_products").click(function () {
+             $('html, body').animate({
+               scrollTop: $("#product").offset().top - 30
+             }, 1900);
+              });
+         
+             var isMobile_only = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+             if(isMobile_only){
+               $(".owl-carousel").attr("data-items", "1");
+               $('.rd-nav-item').click(function() {
+               $(".rd-navbar-toggle" ).click();
+             });
+             }
+             
+         });
+      </script>
+      
+   </head>
+   <body id="index_page">
+      <div class="page animated" style="animation-duration: 500ms;">
+         <header class="section page-header">
+            <div class="rd-navbar-wrap" style="height: auto;">
+               <nav class="rd-navbar rd-navbar-transparent rd-navbar-transparent-white rd-navbar-original rd-navbar-static rd-navbar--is-stuck" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-auto-height="false" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                  <div class="rd-navbar-main-outer">
+                     <div class="rd-navbar-main">
+                        <div class="rd-navbar-panel">
+                           <button class="rd-navbar-toggle toggle-original" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                           <div class="rd-navbar-brand">
+                              <a class="brand" href="#order_form0">
+                              <img class="brand-logo-dark" src="images/logo-default-135x21.png" alt="" width="135" height="21" srcset="images/logo-default-135x21.png">
+                              <img class="brand-logo-light" src="images/logo-default-135x21.png" alt="" width="135" height="21" srcset="images/logo-default-135x21.png">
+                              </a>
+                           </div>
+                        </div>
+                        <div class="rd-navbar-main-element">
+                           <div class="rd-navbar-nav-wrap toggle-original-elements">
+                              <ul class="rd-navbar-nav">
+                                 <li class="rd-nav-item active"><a class="rd-nav-link nav_home" href="#"> Home </a>
+                                 </li>
+                                 <li class="rd-nav-item"><a class="rd-nav-link nav_benefits" href="#"> Vorteile </a>
+                                 </li>
+                                 <li class="rd-nav-item"><a class="rd-nav-link nav_our_clients" href="#"> Unsere Kunden </a></li>
+                                 <li class="rd-nav-item"><a class="rd-nav-link nav_our_products" href="#"> Unsere Produkte </a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </nav>
+            </div>
+         </header>
+         <section class="section swiper-container__ swiper-slider swiper-slider-3 context-dark">
+            <div class="swiper-wrapper__">
+               <div class="swiper-slide" data-slide-bg="img/slide-05.jpg">
+                  <div class="swiper-slide-caption section-xl">
+                     <div class="container">
+                        <div class="row justify-content-sm-end">
+                           <div class="col-xs-9 col-sm-7 col-md-5 product_header_wrap wow fadeInSmall" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInSmall;">
+                              <p class="text-center"><img src="images/product_header.png" alt="" class="product_header desk"></p>
+                           </div>
+                           <div class="col-xs-9 col-sm-7 col-md-5 mar0auto" id="header_wrap_text">
+                              <div>
+                                 <h1 id="color_2e3e60">Novaskin Gesichtscreme</h1>
+                                 <div class="heading-1">
+                                    <span> Entdecken Sie die Verjüngung mit einer hochwertigen Hautpflegebehandlung</span>
+                                 </div>
+                                 <p class="wow fadeInRight" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInRight;"><strong> ◆ Hilft dabei, feine Linien und Falten zu reduzieren </strong></p>
+                                 <p class="wow fadeInRight" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;"><strong> ◆ Füllt die Haut sichtbar wieder auf, strafft sie und hebt sie an </strong></p>
+                                 <p class="wow fadeInRight" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInRight;"><strong> ◆ Hellt dunkle Ringe unter den Augen auf und reduziert sie </strong></p>
+                                 <p class="text-center"><img src="images/product_header.png" alt="" class="product_header mob"></p>
+                                 <a class="button button-white-outline toBoxes" href="#"> Jetzt bestellen </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="section section-sm" id="skin_issue">
+            <div class="section-title">
+               <h1 class="text-center font-weight-bold wow fadeInSmall" style="visibility: visible; animation-name: fadeInSmall;">Entdecke die Vorteile von Novaskin:</h1>
+            </div>
+            <div class="skin_issue_wrap container wow fadeInSmall" style="visibility: visible; animation-name: fadeInSmall;">
+               <div class="secTwoImage">
+                  <img src="images/skin_issue_1.png" alt="">
+                  <p>Macht die Haut glatter</p>
+               </div>
+               <div class="secTwoImage">
+                  <img src="images/skin_issue_2.png" alt="">
+                  <p>Reduziert Falten</p>
+               </div>
+               <div class="secTwoImage">
+                  <img src="images/skin_issue_3.png" alt="">
+                  <p>Strafft die Haut</p>
+               </div>
+               <div class="secTwoImage">
+                  <img src="images/skin_issue_4.png" alt="">
+                  <p>Hydratiert tief</p>
+               </div>
+               <div class="secTwoImage">
+                  <img src="images/skin_issue_5.png" alt="">
+                  <p>Reduziert dunkle Kreise</p>
+               </div>
+            </div>
+            <div class="clear"></div>
+         </section>
+         <section class="section section-sm" id="benefits_section">
+            <div class="row row-30">
+               <div class="col-xs-6 col-lg-3 wow fadeInSmall" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+                  <div class="features-box">
+                     <div class="features-box-image">
+                        <img src="images/benefits_icon_1.png" alt="">
+                     </div>
+                     <h4 class="features-box-title"> Verjüngung </h4>
+                     <div class="features-box-decor">
+                        <div class="features-box-decor-item"></div>
+                        <div class="features-box-decor-item"></div>
+                        <div class="features-box-decor-item"></div>
+                     </div>
+                     <p> Es verlangsamt den Alterungsprozess und wirkt sich positiv auf die Hautverjüngung aus. </p>
+                  </div>
+               </div>
+               <div class="col-xs-6 col-lg-3 wow fadeInSmall" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                  <div class="features-box">
+                     <div class="features-box-image">
+                        <img src="images/benefits_icon_2.png" alt="">
+                     </div>
+                     <h4 class="features-box-title"> Vorbeugen </h4>
+                     <div class="features-box-decor">
+                        <div class="features-box-decor-item"></div>
+                        <div class="features-box-decor-item"></div>
+                        <div class="features-box-decor-item"></div>
+                     </div>
+                     <p> Es beugt vorzeitige Falten und feine Linien vor und schützt die Haut vor Entzündungen. </p>
+                  </div>
+               </div>
+               <div class="col-xs-6 col-lg-3 wow fadeInSmall" data-wow-delay=".3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+                  <div class="features-box">
+                     <div class="features-box-image">
+                        <img src="images/benefits_icon_3.png" alt="">
+                     </div>
+                     <h4 class="features-box-title"> Nährstoffversorgung </h4>
+                     <div class="features-box-decor">
+                        <div class="features-box-decor-item"></div>
+                        <div class="features-box-decor-item"></div>
+                        <div class="features-box-decor-item"></div>
+                     </div>
+                     <p> Es spendet Feuchtigkeit und bereichert die Haut mit essentiellen Nährstoffen, wodurch sie glatt, geschmeidig und strahlend wird. </p>
+                  </div>
+               </div>
+               <div class="col-xs-6 col-lg-3 wow fadeInSmall" data-wow-delay=".4s" style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+                  <div class="features-box">
+                     <div class="features-box-image">
+                        <img src="images/benefits_icon_4.png" alt="">
+                     </div>
+                     <h4 class="features-box-title"> Geeignet für alle Hauttypen </h4>
+                     <div class="features-box-decor">
+                        <div class="features-box-decor-item"></div>
+                        <div class="features-box-decor-item"></div>
+                        <div class="features-box-decor-item"></div>
+                     </div>
+                     <p> Unabhängig von Alter oder Hauttyp, Novaskin wirkt für eine straffere Haut und hinterlässt ein sanftes Gefühl. </p>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="parallax-container" id="testimonials_section" data-parallax-img="img/bg-01.jpg">
+            <div class="material-parallax parallax"><img src="images/bg-01.jpg" alt="" style="display: block;"></div>
+            <div class="parallax-content section-lg">
+               <div class="container_ text-center">
+                  <h1 class="wow fadeInSmall" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;"> Unsere glücklichen Kunden schildern ihre Erfahrungen mit Novaskin </h1>
+                  <div class="divider wow fadeInSmall" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;"></div>
+                  <div class="owl-carousel">
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5"> Als ich 40 wurde, machte ich mir Sorgen um meine Haut und wie sie nun aussieht. Ich bin auf Novaskin gestoßen und glaubt mir, ich bereue meine Wahl nicht einmal ein bisschen! Es brachte buchstäblich die Vitalität und das jugendliche Aussehen meines Gesichts zurück und machte mich zu der selbstbewussten Frau, die ich sein sollte! Vielen Dank! </q>
+                           </p>
+                           <p class="text-center"><img src="images/abby_johnson.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐⭐</p>
+                           <cite class="cite"> Emilia Wagner, 44 </cite>
+                           <span class="blockquote-sinple-position"> Neukundin </span>
+                        </blockquote>
+                     </div>
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5"> Diese Creme ist leicht und macht meine Mischhaut nicht fettig oder führte zu einem Ausschlag. Es zieht schnell ein. Es ist voller Antioxidantien. Meine Haut sieht gut aus und fühlt sich gut an! </q>
+                           </p>
+                           <p class="text-center"><img src="images/pamela_gray.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐⭐</p>
+                           <cite class="cite"> Sophi Moser, 54 </cite>
+                           <span class="blockquote-sinple-position"> Stammkundin </span>
+                        </blockquote>
+                     </div>
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5"> Ich LIEBE diese Creme! Es braucht nicht viel, zieht super schnell ein und ist die beste Feuchtigkeitscreme für das Gesicht, die ich je hatte, und lässt auch die feinen Linien verschwinden! Ich liebe es auch, dass sie einen leichten "sommerlichen" Geruch hat! Sie lässt meine Haut strahlen und sich lebendig fühlen! </q>
+                           </p>
+                           <p class="text-center"><img src="images/marilyn_ross.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐</p>
+                           <cite class="cite"> Mia Steiner, 38 </cite>
+                           <span class="blockquote-sinple-position"> Stammkundin </span>
+                        </blockquote>
+                     </div>
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5">Ich liebe es, wie glatt, weich und jugendlich sich meine Haut mit dieser Creme anfühlt. Ich habe Allergien und fühle mich gut mit dieser Feuchtigkeitscreme. Ich habe es schon lange benutzt und nichts ist vergleichbar mit Novaskin in Bezug auf Qualität oder Wert. Nachdem ich in Spas teurere Cremes probiert habe, bleibt dies mein Favorit.
+                              </q>
+                           </p>
+                           <p class="text-center"><img src="images/bebbie_johnes.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐⭐</p>
+                           <cite class="cite"> Élea Fuchs, 43 </cite>
+                           <span class="blockquote-sinple-position"> Neukundin </span>
+                        </blockquote>
+                     </div>
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5">Ich benutze Novaskin seit 2 Jahren. Es funktioniert wunderbar am Morgen, wenn meine Augen geschwollen sind. Ich tupfe ein wenig unter meine Augen und innerhalb von 10 Minuten sehen meine Augen glatt und ohne Falten aus. Ich liebe es auch, es unter meinem Kinn und Hals zum Festziehen und Abnehmen zu verwenden. Ich bin 50 Jahre alt und mit Rejuvenate sieht meine Haut aus, als wäre ich wieder in meinen 30ern !!
+                              </q>
+                           </p>
+                           <p class="text-center"><img src="images/christine_newton.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐</p>
+                           <cite class="cite"> Emilie Mayr, 50 </cite>
+                           <span class="blockquote-sinple-position"> Neukundin </span>
+                        </blockquote>
+                     </div>
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5"> Ich liebe Novaskin Cream. Dadurch fühlt sich meine Haut an, als hätte ich sie grundiert, bevor ich etwas anderes anziehe. Das Make-up geht besser und ich habe das Gefühl, dass es sofort bei den Stirnrunzeln hilft.  </q>
+                           </p>
+                           <p class="text-center"><img src="images/jessica_weber.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐⭐</p>
+                           <cite class="cite"> Carlotte Gruber, 37 </cite>
+                           <span class="blockquote-sinple-position"> Neukundin </span>
+                        </blockquote>
+                     </div>
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5"> Als ich 40 wurde, machte ich mir Sorgen um meine Haut und wie sie nun aussieht. Ich bin auf Novaskin gestoßen und glaubt mir, ich bereue meine Wahl nicht einmal ein bisschen! Es brachte buchstäblich die Vitalität und das jugendliche Aussehen meines Gesichts zurück und machte mich zu der selbstbewussten Frau, die ich sein sollte! Vielen Dank! </q>
+                           </p>
+                           <p class="text-center"><img src="images/abby_johnson.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐⭐</p>
+                           <cite class="cite"> Emilia Wagner, 44 </cite>
+                           <span class="blockquote-sinple-position"> Neukundin </span>
+                        </blockquote>
+                     </div>
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5"> Diese Creme ist leicht und macht meine Mischhaut nicht fettig oder führte zu einem Ausschlag. Es zieht schnell ein. Es ist voller Antioxidantien. Meine Haut sieht gut aus und fühlt sich gut an! </q>
+                           </p>
+                           <p class="text-center"><img src="images/pamela_gray.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐⭐</p>
+                           <cite class="cite"> Sophi Moser, 54 </cite>
+                           <span class="blockquote-sinple-position"> Stammkundin </span>
+                        </blockquote>
+                     </div>
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5"> Ich LIEBE diese Creme! Es braucht nicht viel, zieht super schnell ein und ist die beste Feuchtigkeitscreme für das Gesicht, die ich je hatte, und lässt auch die feinen Linien verschwinden! Ich liebe es auch, dass sie einen leichten "sommerlichen" Geruch hat! Sie lässt meine Haut strahlen und sich lebendig fühlen! </q>
+                           </p>
+                           <p class="text-center"><img src="images/marilyn_ross.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐</p>
+                           <cite class="cite"> Mia Steiner, 38 </cite>
+                           <span class="blockquote-sinple-position"> Stammkundin </span>
+                        </blockquote>
+                     </div>
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5">Ich liebe es, wie glatt, weich und jugendlich sich meine Haut mit dieser Creme anfühlt. Ich habe Allergien und fühle mich gut mit dieser Feuchtigkeitscreme. Ich habe es schon lange benutzt und nichts ist vergleichbar mit Novaskin in Bezug auf Qualität oder Wert. Nachdem ich in Spas teurere Cremes probiert habe, bleibt dies mein Favorit.
+                              </q>
+                           </p>
+                           <p class="text-center"><img src="images/bebbie_johnes.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐⭐</p>
+                           <cite class="cite"> Élea Fuchs, 43 </cite>
+                           <span class="blockquote-sinple-position"> Neukundin </span>
+                        </blockquote>
+                     </div>
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5">Ich benutze Novaskin seit 2 Jahren. Es funktioniert wunderbar am Morgen, wenn meine Augen geschwollen sind. Ich tupfe ein wenig unter meine Augen und innerhalb von 10 Minuten sehen meine Augen glatt und ohne Falten aus. Ich liebe es auch, es unter meinem Kinn und Hals zum Festziehen und Abnehmen zu verwenden. Ich bin 50 Jahre alt und mit Rejuvenate sieht meine Haut aus, als wäre ich wieder in meinen 30ern !!
+                              </q>
+                           </p>
+                           <p class="text-center"><img src="images/christine_newton.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐</p>
+                           <cite class="cite"> Emilie Mayr, 50 </cite>
+                           <span class="blockquote-sinple-position"> Neukundin </span>
+                        </blockquote>
+                     </div>
+                     <div class="">
+                        <blockquote class="blockquote-sinple">
+                           <span class="blockquote-sinple-mark">
+                              <svg viewbox="0 0 63 51" fill="none">
+                                 <path d="M56.4453 3.61328C52.2786 5.37109 48.6979 8.13802 45.7031 11.9141C42.7083 15.625 41.2109 19.401 41.2109 23.2422C41.2109 24.8698 41.4062 26.2695 41.7969 27.4414C44.0755 25.6836 46.5495 24.8047 49.2188 24.8047C52.8646 24.8047 55.8919 25.9766 58.3008 28.3203C60.7747 30.599 62.0117 33.6914 62.0117 37.5977C62.0117 41.2435 60.7747 44.3034 58.3008 46.7773C55.8268 49.1862 52.7995 50.3906 49.2188 50.3906C44.0755 50.3906 40.1367 48.2747 37.4023 44.043C35.1237 40.5273 33.9844 36.1328 33.9844 30.8594C33.9844 24.1536 35.6771 18.1641 39.0625 12.8906C42.513 7.55208 47.6888 3.25521 54.5898 0L56.4453 3.61328ZM22.4609 3.61328C18.2943 5.37109 14.7135 8.13802 11.7188 11.9141C8.72396 15.625 7.22656 19.401 7.22656 23.2422C7.22656 24.8698 7.42188 26.2695 7.8125 27.4414C10.026 25.6836 12.5 24.8047 15.2344 24.8047C18.8151 24.8047 21.8424 25.9766 24.3164 28.3203C26.7904 30.599 28.0273 33.6914 28.0273 37.5977C28.0273 40.0065 27.4414 42.1875 26.2695 44.1406C25.0977 46.0938 23.5352 47.6237 21.582 48.7305C19.6289 49.8372 17.513 50.3906 15.2344 50.3906C10.0911 50.3906 6.15234 48.2747 3.41797 44.043C1.13932 40.5273 0 36.1328 0 30.8594C0 24.1536 1.69271 18.1641 5.07812 12.8906C8.52865 7.55208 13.7044 3.25521 20.6055 0L22.4609 3.61328Z"/>
+                              </svg>
+                           </span>
+                           <p>
+                              <q class="heading-5"> Ich liebe Novaskin Cream. Dadurch fühlt sich meine Haut an, als hätte ich sie grundiert, bevor ich etwas anderes anziehe. Das Make-up geht besser und ich habe das Gefühl, dass es sofort bei den Stirnrunzeln hilft.  </q>
+                           </p>
+                           <p class="text-center"><img src="images/jessica_weber.png" alt=""></p>
+                           <p class="text-center">⭐⭐⭐⭐⭐</p>
+                           <cite class="cite"> Carlotte Gruber, 37 </cite>
+                           <span class="blockquote-sinple-position"> Neukundin </span>
+                        </blockquote>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="section section-sm bg-gray-200 text-center">
+            <section class="section section-lg section-bottom-0 bg-default text-center">
+               <div class="container">
+                  <h1 class="font-weight-bold wow fadeInSmall" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;"> Unsere Mission ist es, unseren Kunden Zufriedenheit zu bringen!</h1>
+               </div>
+               <p class="text-center desk"><img src="images/customers_desk.jpg"></p>
+               <p class="text-center mob"><img src="images/customers_mob.jpg"></p>
+            </section>
+            <section class="section section-lg bg-gray-200 text-center">
+               <div class="container">
+                  <h1 class="font-weight-bold wow fadeInSmall" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;"> Wir geben Ihnen das beste Erlebnis </h1>
+                  <div class="divider wow fadeInSmall" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;"></div>
+                  <div class="row row-30">
+                     <div class="col-sm-6 col-lg-3 wow fadeInSmall" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+                        <div class="box-expert">
+                           <div class="box-expert-image"><img src="images/expert-01-200x200.png" alt="" width="200" height="200"></div>
+                           <div class="box-expert-body">
+                              <h6> Freihausversand </h6>
+                              <p> Wir bieten kostenlose Lieferung für alle Bestellungen. Das Produkt wird Ihnen innerhalb von 1-3 Werktagen ab dem Tag Ihrer Bestellung geliefert. </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-lg-3 wow fadeInSmall" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                        <div class="box-expert">
+                           <div class="box-expert-image"><img src="images/expert-02-200x200.png" alt="" width="200" height="200"></div>
+                           <div class="box-expert-body">
+                              <h6> Volle Rückerstattung </h6>
+                              <p> Sie erhalten eine 30-tägige Geld-zurück-Garantie, falls Sie Ihre Meinung geändert haben oder mit den Produkten nicht zufrieden sind. </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-lg-3 wow fadeInSmall" data-wow-delay=".3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+                        <div class="box-expert">
+                           <div class="box-expert-image"><img src="images/expert-03-200x200.png" alt="" width="200" height="200"></div>
+                           <div class="box-expert-body">
+                              <h6> Starke Angebote </h6>
+                              <p> Wir bieten das ganze Jahr über exklusive Rabatte und Angebote, damit Sie alles, was Sie wollen, zum besten Preis kaufen können. </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-lg-3 wow fadeInSmall" data-wow-delay=".4s" style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+                        <div class="box-expert">
+                           <div class="box-expert-image"><img src="images/expert-04-200x200.png" alt="" width="200" height="200"></div>
+                           <div class="box-expert-body">
+                              <h6> Sichere Bezahlung </h6>
+                              <p> Sie können direkt beim Postboten bezahlen, wenn Ihre Bestellung eintrifft, sodass Sie nichts im Voraus bezahlen müssen. </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <div class="sixt-block  wow fadeInSmall" id="product" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInSmall;">
+               <span class="inscr-absolute"><i>Innovative Creme <br><b> mit Hyaluronsäure</b></i></span>
+               <div class="first-block">
+                  <div class="logo-inscription">• Novaskin •</div>
+                  <div class="inscr">Jetzt bestellen</div>
+                  <div class="arrow-image">
+                     <img src="images/sixt-arrow.png">
+                  </div>
+                  <div class="product-image">
+                     <img src="images/product.png">
+                  </div>
+               </div>
+               <div class="second-block">
+                  <div class="title">Jetzt bestellen</div>
+                  <form action="https://healthbestblog.space/cpatl/api.php" class="al-form order_form" id="order_form0" method="post" style="position: relative;">
+                        
+    <select name="offer" class="form-control country_chang" style="display: none;">
+        <option data-country-code="AT" selected="selected" value="21649">
+            Австрия        </option>
+    </select>
+
+                         <div>
+                        <input name="name" placeholder="Name und Vorname" type="text">
+                     </div>
+                     <div>
+                        <input class="only_number" name="phone" placeholder="Telefonnummer" type="tel">
+                     </div>
+                     <span> Sonderangebot: <br><span class="line-through price_old al-cost-promo"><x-oldprice>99</x-oldprice> <x-currency>€</x-currency></span><span class="new-price price_main al-cost"><x-newprice>49</x-newprice> <x-currency>€</x-currency></span> </span>
+                     <div class="s__of">
+                        <button type="submit" class="js_pre_toform my1 btn">Jetzt bestellen</button>
+                        <div class="toform"></div>
+                     </div>
+                       <input type="hidden" name="stream_hid" value="4OyHzv8x">
+      <input type="hidden" name="offer_id" value="4444">
+
+      
+      <input type="hidden" name="country" value="AT"> 
+
+      <input type="hidden" name="sid1" value="alex">
+      <input type="hidden" name="sid2" value="alex2">
+      <input type="hidden" name="sid3" value="alex3">
+      <input type="hidden" name="redirect_url" value="https://amazinghealth.github.io/germitox-ita/success/index.html">
+                  </form>
+               </div>
+            </div>
+         </section>
+      </div>
+     
+      <script type="text/javascript" src="js/core.min.js"></script>
+      <script type="text/javascript" src="js/script.js"></script>
+     
+      <a href="#" id="ui-to-top" class="ui-to-top fa fa-angle-up"></a>
+   </body>
+</html>
